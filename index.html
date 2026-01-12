@@ -2,14 +2,30 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bienvenido a mi Servidor</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/script.js"></script>
+    <title>Mi Web Interactiva</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <h1>🚀 ¡Hola, bienvenido al servidor de Aaron Moreno!🌍</h1>
-    <p>¡Se ha realizado un cambio</p>
-    <button onclick="cambiarColor()">Cambiar color de fondo 🎨</button>
+  <main class="container">
+    <section class="card">
+      <header class="header">
+        <h1>Saludo personalizado</h1>
+        <p>Escribe tu nombre y recibe una respuesta.</p>
+      </header>
+
+      <form id="formulario" class="form">
+        <label for="texto" class="label">Nombre</label>
+
+        <div class="row">
+          <input type="text" id="texto" placeholder="Ej: Aaron" autocomplete="name" required>
+          <button type="submit">Enviar</button>
+        </div>
+      </form>
+
+      <p id="resultado" class="result" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <script src="js/script.js"></script>
 </body>
 </html>

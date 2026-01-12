@@ -1,11 +1,18 @@
-function cambiarColor() {
-            const colorin = [
-                "linear-gradient(135deg, #ff9a9e, #fad0c4)",
-                "linear-gradient(135deg, #a1c4fd, #c2e9fb)",
-                "linear-gradient(135deg, #fddb92, #d1fdff)",
-                "linear-gradient(135deg, #9890e3, #b1f4cf)",
-                "linear-gradient(135deg, #fbc2eb, #a6c1ee)"
-            ];
-            const random = Math.floor(Math.random() * colorin.length);
-            document.body.style.background = colorin[random];
-        }
+const formulario = document.getElementById("formulario");
+
+formulario.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const texto = document.getElementById("texto").value.trim();
+    const resultado = document.getElementById("resultado");
+
+    if (texto === "") {
+        resultado.textContent = "Ey 👀 escribe algo primero";
+        return;
+    }
+
+    const letras = texto.length;
+
+    resultado.textContent = `Hola ${texto} 👋✨  
+Tu nombre tiene ${letras} letras… precioso, por cierto 😌`;
+});
