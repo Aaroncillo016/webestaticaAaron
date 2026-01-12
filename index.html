@@ -1,29 +1,186 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Mi Web Interactiva</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Aaron | Desarrollador Web & Multiplataforma</title>
+  <meta name="description" content="Portfolio de Aaron: desarrollo web, apps multiplataforma y soporte IT." />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
-  <main class="container">
-    <section class="card">
-      <header class="header">
-        <h1>Saludo personalizado</h1>
-        <p>Escribe tu nombre y recibe una respuesta.</p>
-      </header>
+  <header class="topbar">
+    <a class="brand" href="#inicio">Aaron</a>
 
-      <form id="formulario" class="form">
-        <label for="texto" class="label">Nombre</label>
+    <nav class="nav">
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#stack">Stack</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
 
-        <div class="row">
-          <input type="text" id="texto" placeholder="Ej: Aaron" autocomplete="name" required>
-          <button type="submit">Enviar</button>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">☰</button>
+  </header>
+
+  <main id="inicio" class="container">
+    <section class="hero">
+      <div class="hero-left">
+        <p class="kicker">Desarrollador Web y Multiplataforma · Técnico IT</p>
+        <h1>Construyo productos digitales y resuelvo problemas técnicos con enfoque práctico.</h1>
+        <p class="subtitle">
+          Me especializo en desarrollo web (front y back), automatización y despliegue.
+          También trabajo con infraestructura y soporte IT cuando el proyecto lo requiere.
+        </p>
+
+        <div class="cta">
+          <a class="btn primary" href="#proyectos">Ver proyectos</a>
+          <a class="btn ghost" href="#contacto">Contactar</a>
         </div>
-      </form>
 
-      <p id="resultado" class="result" aria-live="polite"></p>
+        <div class="links">
+          <!-- Sustituye # por tus enlaces reales -->
+          <a href="#" target="_blank" rel="noreferrer">GitHub</a>
+          <a href="#" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="#" target="_blank" rel="noreferrer">CV</a>
+        </div>
+      </div>
+
+      <aside class="hero-right card">
+        <img class="avatar" src="img/images.png" alt="Foto de Aaron" />
+        <div class="quick">
+          <div>
+            <p class="label">Ubicación</p>
+            <p class="value">Madrid, España</p>
+          </div>
+          <div>
+            <p class="label">Enfoque</p>
+            <p class="value">Web · Apps · IT</p>
+          </div>
+          <div>
+            <p class="label">Disponibilidad</p>
+            <p class="value">Freelance / Proyectos</p>
+          </div>
+        </div>
+      </aside>
     </section>
+
+    <section id="sobre-mi" class="section">
+      <h2>Sobre mí</h2>
+      <p class="muted">
+        Soy Aaron, desarrollador web y multiplataforma con perfil técnico de IT. Me gusta trabajar con productos
+        reales: definir el problema, construir una solución mantenible y dejar un despliegue estable.
+      </p>
+
+      <div class="grid-3">
+        <div class="card">
+          <h3>Desarrollo</h3>
+          <p class="muted">Front-end, back-end, bases de datos.</p>
+        </div>
+        <div class="card">
+          <h3>Despliegue</h3>
+          <p class="muted">Entornos Linux, servidores, dominios/SSL y automatización básica.</p>
+        </div>
+        <div class="card">
+          <h3>Soporte IT</h3>
+          <p class="muted">Diagnóstico, redes, equipos, incidencias.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="stack" class="section">
+      <h2>Stack</h2>
+      <p class="muted">Tecnologías con las que suelo trabajar.</p>
+
+      <div class="chips">
+        <!-- Ajusta a tu stack real -->
+        <span class="chip">HTML</span>
+        <span class="chip">CSS</span>
+        <span class="chip">JavaScript</span>
+        <span class="chip">PHP</span>
+        <span class="chip">MySQL</span>
+        <span class="chip">Git / GitHub</span>
+        <span class="chip">Linux</span>
+        <span class="chip">Apache/Nginx</span>
+      </div>
+    </section>
+
+    <section id="proyectos" class="section">
+      <h2>Proyectos</h2>
+      <p class="muted">Una selección breve. Puedes enlazar a repos, demos o documentación.</p>
+
+      <div class="projects">
+        <article class="card project">
+          <img src="" alt="Captura proyecto 1" class="project-img" />
+          <div class="project-body">
+            <h3>Red Social (PHP + MySQL)</h3>
+            <p class="muted">
+              Sistema con usuarios, publicaciones, comentarios y roles. Incluye seguridad básica
+              (hash de contraseñas, validaciones) y estructura de base de datos.
+            </p>
+            <div class="project-meta">
+              <span class="chip">PHP</span>
+              <span class="chip">MySQL</span>
+              <span class="chip">Auth</span>
+            </div>
+            <div class="project-links">
+              <a href="#" target="_blank" rel="noreferrer">Repositorio</a>
+              <a href="#" target="_blank" rel="noreferrer">Demo</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card project">
+          <img src="imágenes/proyecto-2.png" alt="Captura proyecto 2" class="project-img" />
+          <div class="project-body">
+            <h3>Herramienta IT / Automatización</h3>
+            <p class="muted">
+              Scripts y utilidades para diagnóstico, comprobaciones y tareas repetitivas. Enfocado
+              a productividad y documentación de incidencias.
+            </p>
+            <div class="project-meta">
+              <span class="chip">Linux</span>
+              <span class="chip">Scripting</span>
+              <span class="chip">Docs</span>
+            </div>
+            <div class="project-links">
+              <a href="#" target="_blank" rel="noreferrer">Repositorio</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="contacto" class="section">
+      <h2>Contacto</h2>
+      <p class="muted">
+        Si quieres hablar de un proyecto, puedes escribirme aquí. (El formulario muestra un saludo personalizado
+        en la propia página; para envío real necesitarías un servicio externo.)
+      </p>
+
+      <div class="card contact-card">
+        <form id="formulario" class="form">
+          <div class="field">
+            <label for="texto">Tu nombre</label>
+            <input id="texto" type="text" placeholder="Ej: Marta" autocomplete="name" required />
+          </div>
+
+          <button class="btn primary" type="submit">Generar saludo</button>
+        </form>
+
+        <p id="resultado" class="result" aria-live="polite"></p>
+
+        <div class="contact-links">
+          <!-- Pon tus datos reales -->
+          <a href="#" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="#" target="_blank" rel="noreferrer">GitHub</a>
+          <a href="mailto:tuemail@ejemplo.com">tuemail@ejemplo.com</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p class="muted">© <span id="year"></span> Aaron. Hecho con HTML/CSS/JS.</p>
+    </footer>
   </main>
 
   <script src="js/script.js"></script>

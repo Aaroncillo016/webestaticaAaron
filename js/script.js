@@ -1,18 +1,47 @@
 const formulario = document.getElementById("formulario");
+const input = document.getElementById("texto");
+const resultado = document.getElementById("resultado");
+const year = document.getElementById("year");
 
-formulario.addEventListener("submit", function(e) {
-    e.preventDefault();
+const navToggle = document.getElementById("navToggle");
+const nav = document.querySelector(".nav");
 
-    const texto = document.getElementById("texto").value.trim();
-    const resultado = document.getElementById("resultado");
+year.textContent = new Date().getFullYear();
 
-    if (texto === "") {
-        resultado.textContent = "Ey 👀 escribe algo primero";
-        return;
-    }
+function saludoSegunHora() {
+  const h = new Date().getHours();
+  if (h < 12) return "Buenos días";
+  if (h < 20) return "Buenas tardes";
+  return "Buenas noches";
+}
 
-    const letras = texto.length;
+function setResult(message) {
+  resultado.textContent = message;
+}
 
-    resultado.textContent = `Hola ${texto} 👋✨  
-Tu nombre tiene ${letras} letras… precioso, por cierto 😌`;
+setResult("Escribe tu nombre y genera un saludo personalizado.");
+
+formulario?.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const nombre = (input.value || "").trim();
+  if (!nombre) {
+    setResult("Por favor, introduce un nombre válido.");
+    input.focus();
+    return;
+  }
+
+  // Procesamiento: capitaliza la primera letra de cada palabra
+  const nombreNormalizado = nombre
+    .split(/\s+/)
+    .map(w => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase())
+    .join(" ");
+
+  const letras = nombreNormalizado.replace(/\s+/g, "").length;
+
+  setResult(`${saludoSegunHora()}, ${nombreNormalizado}. Encantado de conocerte. (Nombre: ${letras} caracteres)`);
+});
+
+navToggle?.addEventListener("click", () => {
+  nav.classList.toggle("is-open");
 });
